@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UniversalFeaturesSuggest | Feature Bounties for the Future of Tech</title>
+    
+    <!-- SEO & JSON-LD -->
+    <meta name="description" content="Stop shouting into the void of Play Store reviews. UniversalFeaturesSuggest (UFS) turns your feature ideas into rewarded innovation. Join the Feature Bounty revolution.">
+    <meta property="og:title" content="UniversalFeaturesSuggest - Feature Bounties for Innovators">
+    <meta property="og:description" content="A neutral platform for crowdsourcing and rewarding software UI/UX improvements. Created by Mainadev.">
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "UniversalFeaturesSuggest",
+      "alternateName": "UFS",
+      "url": "https://universalfeaturessuggest.com",
+      "author": {
+        "@type": "Person",
+        "name": "Mainadev"
+      },
+      "description": "A universal platform for crowdsourcing and rewarding software feature suggestions and UI/UX improvements.",
+      "applicationCategory": "ProductivityApplication",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    }
+    </script>
+
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300..800&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        :root {
+            --primary: #6366f1;
+            --accent: #f43f5e;
+            --dark: #0f172a;
+            --glass: rgba(255, 255, 255, 0.03);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #020617;
+            color: #f8fafc;
+            scroll-behavior: smooth;
+        }
+
+        h1, h2, h3, .grotesk {
+            font-family: 'Bricolage Grotesque', sans-serif;
+            letter-spacing: -0.02em;
+        }
+
+        .gradient-text {
+            background: linear-gradient(90deg, #818cf8, #f43f5e);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-glow {
+            position: absolute;
+            top: -10%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80vw;
+            height: 60vh;
+            background: radial-gradient(circle, rgba(99, 102, 241, 0.15) 0%, transparent 70%);
+            z-index: -1;
+        }
+
+        .glass-card {
+            background: var(--glass);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .glass-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-4px);
+        }
+
+        .bounty-tag {
+            background: linear-gradient(45deg, #10b981, #059669);
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: bold;
+        }
+
+        .step-line::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 100%;
+            width: 2px;
+            height: 40px;
+            background: linear-gradient(to bottom, var(--primary), transparent);
+        }
+        
+        .custom-scroll::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scroll::-webkit-scrollbar-thumb {
+            background: #334155;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body class="overflow-x-hidden">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 px-6 py-4 flex justify-between items-center glass-card border-none bg-opacity-70">
+        <div class="flex items-center gap-2">
+            <span class="material-icons text-indigo-500 text-3xl">Auto_awesome</span>
+            <span class="text-xl font-bold grotesk">UFS<span class="text-indigo-400">.io</span></span>
+        </div>
+        <div class="hidden md:flex gap-8 text-sm font-medium">
+            <a href="#how" class="hover:text-indigo-400 transition">How it Works</a>
+            <a href="#bounties" class="hover:text-indigo-400 transition">Bounties</a>
+            <a href="#companies" class="hover:text-indigo-400 transition">For Business</a>
+        </div>
+        <div class="flex items-center gap-4">
+            <button onclick="openModal('suggest')" class="bg-indigo-600 hover:bg-indigo-700 px-5 py-2 rounded-full text-sm font-semibold transition">Suggest Feature</button>
+        </div>
+    </nav>
+
+    <div class="hero-glow"></div>
+
+    <!-- Hero Section -->
+    <header class="pt-32 pb-20 px-6 text-center max-w-5xl mx-auto">
+        <div class="inline-block px-4 py-1.5 mb-6 rounded-full glass-card text-xs font-semibold uppercase tracking-widest text-indigo-300">
+            Reviews are noisy. Bounties are smart.
+        </div>
+        <h1 class="text-5xl md:text-8xl font-extrabold mb-8 leading-tight">
+            Stop Complaining. <br> 
+            <span class="gradient-text">Start Architecting.</span>
+        </h1>
+        <p class="text-lg md:text-xl text-slate-400 mb-10 max-w-2xl mx-auto leading-relaxed">
+            UniversalFeaturesSuggest is the neutral ground where users build the roadmaps of tomorrow. 
+            No more 1-star reviews—just high-value feature specs that companies actually pay for.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <button onclick="openModal('suggest')" class="bg-white text-black px-8 py-4 rounded-xl font-bold flex items-center justify-center gap-2 hover:bg-slate-200 transition">
+                <span class="material-icons">add_circle</span> Suggest a Feature
+            </button>
+            <button onclick="document.getElementById('bounties').scrollIntoView()" class="glass-card px-8 py-4 rounded-xl font-bold flex items-center justify-center gap-2">
+                <span class="material-icons">monetization_on</span> View Feature Bounties
+            </button>
+        </div>
+    </header>
+
+    <!-- The Problem Section -->
+    <section class="py-24 px-6 bg-slate-900 bg-opacity-40">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-4xl font-bold mb-6">Why Reviews & Support <br><span class="text-rose-500">Are Not Enough</span></h2>
+                    <div class="space-y-6">
+                        <div class="flex gap-4">
+                            <span class="material-icons text-rose-500">cancel</span>
+                            <div>
+                                <h4 class="font-bold">App Store Noise</h4>
+                                <p class="text-slate-400 text-sm">Limited text, emotional venting, and zero iteration. Good ideas die in the comments.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <span class="material-icons text-rose-500">cancel</span>
+                            <div>
+                                <h4 class="font-bold">Support Ticket Voids</h4>
+                                <p class="text-slate-400 text-sm">Tickets are built for bugs, not innovation. Feature requests get archived and forgotten.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <span class="material-icons text-emerald-500">check_circle</span>
+                            <div>
+                                <h4 class="font-bold">The UFS Solution</h4>
+                                <p class="text-slate-400 text-sm">Feature-first design. Community validated. Version-aware. Rewarded.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="glass-card p-8 rounded-3xl relative overflow-hidden">
+                    <div class="flex items-center gap-2 mb-6 border-b border-slate-700 pb-4">
+                        <div class="w-3 h-3 rounded-full bg-rose-500"></div>
+                        <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                        <div class="w-3 h-3 rounded-full bg-emerald-500"></div>
+                        <span class="ml-4 text-xs text-slate-500">Universal Suggestion Platform</span>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="p-4 bg-slate-800 rounded-lg border border-slate-700">
+                            <div class="flex justify-between items-start mb-2">
+                                <span class="text-xs font-bold text-indigo-400">@Mainadev</span>
+                                <span class="bounty-tag">$250 Bounty</span>
+                            </div>
+                            <p class="text-sm font-medium">Add 'Layered Themes' to FinTech Dashboards</p>
+                            <div class="flex items-center gap-4 mt-3 text-xs text-slate-500">
+                                <span class="flex items-center gap-1"><span class="material-icons text-sm">thumb_up</span> 1.2k</span>
+                                <span class="flex items-center gap-1"><span class="material-icons text-sm">comment</span> 84</span>
+                            </div>
+                        </div>
+                        <div class="p-4 bg-slate-800 bg-opacity-40 rounded-lg border border-slate-800">
+                            <p class="text-sm text-slate-500 italic">User 8292 suggested: "Native Crypto Off-ramp Integration"...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- User Journey -->
+    <section id="how" class="py-24 px-6 max-w-6xl mx-auto">
+        <h2 class="text-4xl font-bold text-center mb-16 italic">The Innovator's Journey</h2>
+        <div class="grid md:grid-cols-4 gap-8">
+            <div class="text-center relative">
+                <div class="w-16 h-16 bg-indigo-600 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-xl shadow-indigo-500/20">
+                    <span class="material-icons text-3xl">search</span>
+                </div>
+                <h4 class="font-bold mb-2">Find an App</h4>
+                <p class="text-sm text-slate-400">Search any SaaS, Fintech, or Tool. No install needed.</p>
+            </div>
+            <div class="text-center relative">
+                <div class="w-16 h-16 bg-slate-800 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                    <span class="material-icons text-3xl">psychology</span>
+                </div>
+                <h4 class="font-bold mb-2">Architect Idea</h4>
+                <p class="text-sm text-slate-400">Describe the UI/UX. Post anonymously or get credit.</p>
+            </div>
+            <div class="text-center relative">
+                <div class="w-16 h-16 bg-slate-800 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                    <span class="material-icons text-3xl">trending_up</span>
+                </div>
+                <h4 class="font-bold mb-2">Crowd Validation</h4>
+                <p class="text-sm text-slate-400">The community upvotes. The best ideas rise to the top.</p>
+            </div>
+            <div class="text-center">
+                <div class="w-16 h-16 bg-emerald-600 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-xl shadow-emerald-500/20">
+                    <span class="material-icons text-3xl">payments</span>
+                </div>
+                <h4 class="font-bold mb-2">Claim Bounty</h4>
+                <p class="text-sm text-slate-400">Company adopts it. You get paid or earn status.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bounties Feed -->
+    <section id="bounties" class="py-24 px-6 bg-slate-900">
+        <div class="max-w-6xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+                <div>
+                    <h2 class="text-4xl font-bold mb-4">Open Feature Bounties</h2>
+                    <p class="text-slate-400">Companies are actively looking for these improvements.</p>
+                </div>
+                <div class="flex gap-2">
+                    <span class="px-4 py-2 rounded-lg bg-slate-800 text-sm font-semibold border border-slate-700 cursor-pointer">All Apps</span>
+                    <span class="px-4 py-2 rounded-lg bg-indigo-600 text-sm font-semibold cursor-pointer">High Bounty</span>
+                </div>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-6">
+                <!-- Card 1 -->
+                <div class="glass-card p-6 rounded-2xl">
+                    <div class="flex justify-between mb-4">
+                        <span class="text-xs font-bold uppercase text-slate-500">SaaS Platform</span>
+                        <span class="bounty-tag">$500</span>
+                    </div>
+                    <h4 class="text-lg font-bold mb-2">Multi-workspace Navigation UI</h4>
+                    <p class="text-sm text-slate-400 mb-6">Redesign the sidebar for power users handling 10+ projects.</p>
+                    <div class="flex items-center justify-between">
+                        <div class="flex -space-x-2">
+                            <div class="w-8 h-8 rounded-full bg-slate-700 border-2 border-slate-900 flex items-center justify-center text-[10px]">JD</div>
+                            <div class="w-8 h-8 rounded-full bg-indigo-600 border-2 border-slate-900 flex items-center justify-center text-[10px]">M</div>
+                        </div>
+                        <button class="text-indigo-400 text-sm font-bold flex items-center gap-1 hover:underline">View Spec <span class="material-icons text-xs">arrow_forward</span></button>
+                    </div>
+                </div>
+                <!-- Card 2 -->
+                <div class="glass-card p-6 rounded-2xl">
+                    <div class="flex justify-between mb-4">
+                        <span class="text-xs font-bold uppercase text-slate-500">Fintech App</span>
+                        <span class="bounty-tag">$1,200</span>
+                    </div>
+                    <h4 class="text-lg font-bold mb-2">Predictive Tax Forecasting Widget</h4>
+                    <p class="text-sm text-slate-400 mb-6">User wants a visual 'What-if' slider for seasonal earnings.</p>
+                    <div class="flex items-center justify-between">
+                        <div class="flex -space-x-2">
+                            <div class="w-8 h-8 rounded-full bg-emerald-600 border-2 border-slate-900 flex items-center justify-center text-[10px]">AK</div>
+                        </div>
+                        <button class="text-indigo-400 text-sm font-bold flex items-center gap-1 hover:underline">View Spec <span class="material-icons text-xs">arrow_forward</span></button>
+                    </div>
+                </div>
+                <!-- Card 3 -->
+                <div class="glass-card p-6 rounded-2xl border-rose-500/30">
+                    <div class="flex justify-between mb-4">
+                        <span class="text-xs font-bold uppercase text-rose-400">Urgent</span>
+                        <span class="bounty-tag bg-rose-600">$300</span>
+                    </div>
+                    <h4 class="text-lg font-bold mb-2">Offline-first Sync Recovery UI</h4>
+                    <p class="text-sm text-slate-400 mb-6">Better handling of sync conflicts for edge devices.</p>
+                    <div class="flex items-center justify-between">
+                        <div class="flex -space-x-2">
+                            <div class="w-8 h-8 rounded-full bg-slate-700 border-2 border-slate-900"></div>
+                        </div>
+                        <button class="text-indigo-400 text-sm font-bold flex items-center gap-1 hover:underline">View Spec <span class="material-icons text-xs">arrow_forward</span></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- For Companies -->
+    <section id="companies" class="py-24 px-6">
+        <div class="max-w-5xl mx-auto text-center">
+            <h2 class="text-4xl font-bold mb-8">Companies: Stop Guessing. <br><span class="text-indigo-400">Start Shipping What People Want.</span></h2>
+            <div class="grid md:grid-cols-3 gap-8 mb-12">
+                <div class="p-8">
+                    <span class="material-icons text-indigo-500 text-4xl mb-4">analytics</span>
+                    <h4 class="font-bold mb-2">Prioritize by Votes</h4>
+                    <p class="text-sm text-slate-400">Stop debating in meetings. See exactly what your users are willing to pay for.</p>
+                </div>
+                <div class="p-8">
+                    <span class="material-icons text-indigo-500 text-4xl mb-4">hub</span>
+                    <h4 class="font-bold mb-2">Feature Bounties</h4>
+                    <p class="text-sm text-slate-400">Incentivize your power users to design your next breakthrough feature.</p>
+                </div>
+                <div class="p-8">
+                    <span class="material-icons text-indigo-500 text-4xl mb-4">terminal</span>
+                    <h4 class="font-bold mb-2">API & Webhooks</h4>
+                    <p class="text-sm text-slate-400">Route suggestions directly to your Jira, GitHub, or Linear boards.</p>
+                </div>
+            </div>
+            <button class="bg-indigo-600 hover:bg-indigo-700 px-10 py-4 rounded-xl font-bold transition shadow-lg shadow-indigo-600/30">Claim Your Company Dashboard</button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-950 pt-20 pb-10 px-6 border-t border-slate-900">
+        <div class="max-w-6xl mx-auto grid md:grid-cols-4 gap-12 mb-16">
+            <div class="col-span-2">
+                <div class="flex items-center gap-2 mb-6">
+                    <span class="material-icons text-indigo-500 text-2xl">Auto_awesome</span>
+                    <span class="text-xl font-bold grotesk uppercase tracking-tighter">UniversalFeaturesSuggest</span>
+                </div>
+                <p class="text-slate-500 text-sm max-w-sm">
+                    A universal, neutral platform for software evolution. Built for creators by <span class="text-slate-300 font-bold">Mainadev</span>. 
+                    Turning noisy feedback into structured roadmaps since 2025.
+                </p>
+                <div class="flex gap-4 mt-8">
+                    <button onclick="shareUFS()" class="w-10 h-10 rounded-full glass-card flex items-center justify-center hover:bg-indigo-600 transition">
+                        <span class="material-icons text-lg">share</span>
+                    </button>
+                    <a href="#" class="w-10 h-10 rounded-full glass-card flex items-center justify-center hover:bg-indigo-600 transition">
+                        <span class="material-icons text-lg">public</span>
+                    </a>
+                </div>
+            </div>
+            <div>
+                <h5 class="font-bold mb-6">Product</h5>
+                <ul class="text-slate-500 text-sm space-y-4">
+                    <li><a href="#" class="hover:text-indigo-400">API Documentation</a></li>
+                    <li><a href="#" class="hover:text-indigo-400">Icon CDN (Material)</a></li>
+                    <li><a href="#" class="hover:text-indigo-400">User Leaderboard</a></li>
+                    <li><a href="#" class="hover:text-indigo-400">Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div>
+                <h5 class="font-bold mb-6">Ecosystem</h5>
+                <ul class="text-slate-500 text-sm space-y-4">
+                    <li><a href="#" class="hover:text-indigo-400">Open Source Bounties</a></li>
+                    <li><a href="#" class="hover:text-indigo-400">Partnership Program</a></li>
+                    <li><a href="#" class="hover:text-indigo-400">Admin Console</a></li>
+                    <li><a href="#" class="hover:text-indigo-400">Mobile Web App</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="max-w-6xl mx-auto pt-8 border-t border-slate-900 flex flex-col md:flex-row justify-between items-center gap-4 text-slate-600 text-xs">
+            <p>© 2025 UniversalFeaturesSuggest. All rights reserved. Architected by Mainadev.</p>
+            <div class="flex gap-6">
+                <span>v2.1.0-beta</span>
+                <span>System Status: Optimal</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Suggest Modal (Simplified) -->
+    <div id="modal-suggest" class="fixed inset-0 z-[100] hidden flex items-center justify-center p-6 bg-black/80 backdrop-blur-sm">
+        <div class="glass-card w-full max-w-xl rounded-3xl p-8 border-indigo-500/50">
+            <div class="flex justify-between items-center mb-6">
+                <h3 class="text-2xl font-bold">Suggest a Feature</h3>
+                <button onclick="closeModal('suggest')" class="material-icons text-slate-400">close</button>
+            </div>
+            <div class="space-y-4">
+                <div>
+                    <label class="block text-xs font-bold text-slate-500 mb-2 uppercase">Company or App Name</label>
+                    <input type="text" placeholder="e.g. Stripe, Revolut, Linear" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-sm focus:border-indigo-500 outline-none">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-slate-500 mb-2 uppercase">Feature Title</label>
+                    <input type="text" placeholder="Short descriptive title" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-sm focus:border-indigo-500 outline-none">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-slate-500 mb-2 uppercase">Detailed Specification</label>
+                    <textarea placeholder="Describe the UI/UX improvement and the 'Why'..." rows="4" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-sm focus:border-indigo-500 outline-none"></textarea>
+                </div>
+                <div class="flex items-center gap-2">
+                    <input type="checkbox" id="anon" class="accent-indigo-500">
+                    <label for="anon" class="text-xs text-slate-400">Post Anonymously (Won't count for Reputation/Bounties)</label>
+                </div>
+                <button class="w-full bg-indigo-600 py-4 rounded-xl font-bold mt-4 shadow-xl shadow-indigo-600/20">Submit Suggestion</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openModal(id) {
+            document.getElementById('modal-' + id).classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal(id) {
+            document.getElementById('modal-' + id).classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+
+        function shareUFS() {
+            if (navigator.share) {
+                navigator.share({
+                    title: 'UniversalFeaturesSuggest',
+                    text: 'Turn your app feature ideas into rewarded innovation. No more noisy reviews.',
+                    url: window.location.href
+                }).then(() => console.log('Successful share'))
+                  .catch((error) => console.log('Error sharing', error));
+            } else {
+                // Fallback for document.execCommand('copy') as requested
+                const dummy = document.createElement('input');
+                document.body.appendChild(dummy);
+                dummy.value = window.location.href;
+                dummy.select();
+                document.execCommand('copy');
+                document.body.removeChild(dummy);
+                alert('Link copied to clipboard!');
+            }
+        }
+
+        // Handle Escape key for modals
+        window.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                document.querySelectorAll('[id^="modal-"]').forEach(m => m.classList.add('hidden'));
+                document.body.style.overflow = 'auto';
+            }
+        });
+    </script>
+
+</body>
+</html>
